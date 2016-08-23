@@ -1,0 +1,48 @@
+<idea-plugin version="2">
+  <id>com.shang.android.layoutformat</id>
+  <name>LayoutFormat</name>
+  <version>1.0</version>
+  <vendor email="920621870@qq.com" url="https://github.com/shang1101">360</vendor>
+
+  <description><![CDATA[
+      this is a plugin for android Layout formatting,you can use this plugin to farmat you layout.xml;
+      it can make you layout.xml more beautiful.
+      it will creat new string values in values/strings.xml  and  dimen values in values/dimens.xml
+      for those hard_coded in layout.xml.
+      Any question,please sent me emails to contact.
+      My email address: 920621870@qq.com<br>
+      <em>most HTML tags may be used</em>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="141.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <depends>com.intellij.modules.lang</depends>
+  <depends>org.jetbrains.android</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <defaultProjectTypeProvider type="Android"/>
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="com.shang.layoutformat" class="com.shang.layoutformat.LayoutFormat" text="LayoutFormat"
+            description="format android xml layout,and move hard strings  in layout to strings.xml">
+      <add-to-group group-id="RefactoringMenu" anchor="first"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt F"/>
+    </action>
+  </actions>
+
+</idea-plugin>
