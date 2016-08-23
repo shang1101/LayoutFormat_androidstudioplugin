@@ -1,8 +1,8 @@
-<idea-plugin version="2">
-  <id>com.shang.android.layoutformat</id>
+<idea-plugin version="11">
+  <id>com.shang.plugin.layoutformat</id>
   <name>LayoutFormat</name>
   <version>1.0</version>
-  <vendor email="920621870@qq.com" url="https://github.com/shang1101">360</vendor>
+  <vendor email="920621870@qq.com" url="https://github.com/shang1101">shang1101</vendor>
 
   <description><![CDATA[
       this is a plugin for android Layout formatting,you can use this plugin to farmat you layout.xml;
@@ -21,7 +21,7 @@
   </change-notes>
 
   <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
-  <idea-version since-build="141.0"/>
+  <idea-version since-build="131"/>
 
   <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
        on how to target different products -->
@@ -38,7 +38,7 @@
 
   <actions>
     <!-- Add your actions here -->
-    <action id="com.shang.layoutformat" class="com.shang.layoutformat.LayoutFormat" text="LayoutFormat"
+    <action id="plugin.layoutformat" class="com.shang.layoutformat.LayoutFormat" text="LayoutFormat"
             description="format android xml layout,and move hard strings  in layout to strings.xml">
       <add-to-group group-id="RefactoringMenu" anchor="first"/>
       <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt F"/>
