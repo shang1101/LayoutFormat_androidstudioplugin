@@ -11,12 +11,12 @@
 1 . 批量去格式化layout.xml
 
 
-[批量修改layout](https://github.com/shang1101/LayoutFormat_androidstudioplugin/blob/master/layoutformat批量格式化展示.gif)
+![批量修改layout](https://github.com/shang1101/LayoutFormat_androidstudioplugin/blob/master/layoutformat批量格式化展示.gif)
 
 2 .修改某一个layout.xml
 
 
-[单独修改一个布局](https://github.com/shang1101/LayoutFormat_androidstudioplugin/blob/master/layoutformat演示.gif)
+![单独修改一个布局](https://github.com/shang1101/LayoutFormat_androidstudioplugin/blob/master/layoutformat演示.gif)
 #使用中可能会遇到的问题
 在导入插件时，windows下可能会出现插件加载失败的情况。会报下面的错误：
 ```java
