@@ -33,6 +33,7 @@ public class HardStringsReplaceFromatter {
 //        return stringKeyValuesMap;
 //    }
     public void initKeyValuesMap(VirtualFile file) {
+        stringKeyValuesMap.clear();
         index = 0;
         String xmlFile = "";
         if(file.getPath().endsWith("/layout")){
@@ -113,8 +114,6 @@ public class HardStringsReplaceFromatter {
             outputStreamWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
-        }finally {
-            stringKeyValuesMap.clear();
         }
 
     }
@@ -122,7 +121,7 @@ public class HardStringsReplaceFromatter {
     private String covertStringKeyValuesMap2Xml(HashMap<String, String> stringKeyValuesMap) {
         StringBuffer xml =new StringBuffer("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<resources>\n");
         for(String key :stringKeyValuesMap.keySet()){
-            xml.append("<string name=\"").append(key).append("\">").append(stringKeyValuesMap.get(key)).append("</string>\n");
+            xml.append("\t<string name=\"").append(key).append("\">").append(stringKeyValuesMap.get(key)).append("</string>\n");
         }
         xml.append("</resources>");
         return xml.toString();

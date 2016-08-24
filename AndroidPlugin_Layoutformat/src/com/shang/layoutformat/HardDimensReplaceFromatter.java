@@ -33,6 +33,7 @@ public class HardDimensReplaceFromatter {
 //        return dimensKeyValuesMap;
 //    }
     public void initKeyValuesMap(VirtualFile file) {
+        dimensKeyValuesMap.clear();
         index = 0;
         String xmlFile = "";
         if(file.getPath().endsWith("/layout")){
@@ -112,8 +113,6 @@ public class HardDimensReplaceFromatter {
             outputStreamWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
-        }finally {
-            dimensKeyValuesMap.clear();
         }
 
     }
@@ -121,7 +120,7 @@ public class HardDimensReplaceFromatter {
     private String covertStringKeyValuesMap2Xml(HashMap<String, String> stringKeyValuesMap) {
         StringBuffer xml =new StringBuffer("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<resources>\n");
         for(String key :stringKeyValuesMap.keySet()){
-            xml.append("<dimen name=\"").append(key).append("\">").append(stringKeyValuesMap.get(key)).append("</dimen>\n");
+            xml.append("\t<dimen name=\"").append(key).append("\">").append(stringKeyValuesMap.get(key)).append("</dimen>\n");
         }
         xml.append("</resources>");
         return xml.toString();
