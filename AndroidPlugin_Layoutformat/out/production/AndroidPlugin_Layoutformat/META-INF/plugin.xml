@@ -1,5 +1,5 @@
 <idea-plugin version="11">
-  <id>com.shang.plugin.layoutformat</id>
+  <id>com.shang.android.layoutformat</id>
   <name>LayoutFormat</name>
   <version>1.1</version>
   <vendor email="920621870@qq.com" url="https://github.com/shang1101">shang1101</vendor>

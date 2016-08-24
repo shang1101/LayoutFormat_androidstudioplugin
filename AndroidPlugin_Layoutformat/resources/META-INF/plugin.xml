@@ -1,5 +1,5 @@
 <idea-plugin version="11">
-  <id>com.shang.plugin.layoutformat</id>
+  <id>com.shang.android.layoutformat</id>
   <name>LayoutFormat</name>
   <version>1.1</version>
   <vendor email="920621870@qq.com" url="https://github.com/shang1101">shang1101</vendor>
@@ -16,7 +16,7 @@
 
   <change-notes><![CDATA[
       v1.1    fixed bugs in Batched Format <br>
-      useage<em>http://www.jianshu.com/p/87a413d7c8a7</em>
+      usage<em>http://www.jianshu.com/p/87a413d7c8a7</em>
     ]]>
   </change-notes>
 
