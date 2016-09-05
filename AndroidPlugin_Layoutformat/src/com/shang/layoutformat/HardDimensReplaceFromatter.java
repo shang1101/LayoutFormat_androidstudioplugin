@@ -82,6 +82,12 @@ public class HardDimensReplaceFromatter {
         if(dimensKeyValuesMap.values().contains(value))
             return getKeyByValue(value);
         //当不存在时，新建一个key，放到map中去
+        try {
+            if(Integer.parseInt(value) < 0)
+                value = "_"+Math.abs(Integer.parseInt(value));
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
         String currentIndex = "dimen_"+value;
         while (dimensKeyValuesMap.containsKey(currentIndex)){
             index++;

@@ -198,6 +198,12 @@ class Formatter {
                         lines.set(i,key + "=\"@dimen/"+stringKey+"\"");
                     }
                 }
+                if(key.contains("android:") &&(key.toLowerCase().contains("width") || key.toLowerCase().contains("height")) &&!value.contains("@")){
+                    if(HardDimensReplaceFromatter.getInstance().isDimenValue(value)){
+                        String stringKey = HardDimensReplaceFromatter.getInstance().obtainStringKeyByValue(value);
+                        lines.set(i,key + "=\"@dimen/"+stringKey+"\"");
+                    }
+                }
                 //contentDescription
                 if(android("contentDescription").equals(key) && !value.startsWith("@")){
                     String stringKey = HardStringsReplaceFromatter.getInstance().obtainStringKeyByValue(value);
