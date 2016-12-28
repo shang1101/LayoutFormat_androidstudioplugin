@@ -1,4 +1,4 @@
-<idea-plugin version="11">
+<idea-plugin version="12">
   <id>com.shang.android.layoutformat</id>
   <name>LayoutFormat</name>
   <version>1.2.2</version>

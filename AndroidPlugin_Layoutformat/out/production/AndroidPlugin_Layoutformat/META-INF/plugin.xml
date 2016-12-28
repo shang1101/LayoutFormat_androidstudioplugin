@@ -1,4 +1,4 @@
-<idea-plugin version="11">
+<idea-plugin version="12">
   <id>com.shang.android.layoutformat</id>
   <name>LayoutFormat</name>
   <version>1.2.2</version>
@@ -15,7 +15,7 @@
     ]]></description>
 
   <change-notes><![CDATA[
-      v1.2.2  keep the order of elements in dimens.xml and string.xml<br>
+      v1.2.2  keep the order of elements in dimens.xml and string.xml, fixed bug when dimens is minus<br>
       v1.2    fixed bug when dimens is minus,and add rules for android width,height <br>
       v1.1    fixed bugs in Batched Format <br>
       usage<em>http://www.jianshu.com/p/87a413d7c8a7</em>
