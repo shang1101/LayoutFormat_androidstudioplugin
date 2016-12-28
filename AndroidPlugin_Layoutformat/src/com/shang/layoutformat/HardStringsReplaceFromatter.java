@@ -1,7 +1,6 @@
 package com.shang.layoutformat;
 
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.util.containers.HashMap;
 import org.apache.http.util.TextUtils;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
@@ -14,6 +13,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.util.LinkedHashMap;
 import java.util.Set;
 
 /**
@@ -28,7 +28,7 @@ public class HardStringsReplaceFromatter {
             instance = new HardStringsReplaceFromatter();
         return instance;
     }
-    private static HashMap<String,String> stringKeyValuesMap = new HashMap<String,String>();
+    private static LinkedHashMap<String,String> stringKeyValuesMap = new LinkedHashMap<String,String>();
 //    public HashMap<String,String>  getStringKeyValuesMap(){
 //        return stringKeyValuesMap;
 //    }
@@ -118,7 +118,7 @@ public class HardStringsReplaceFromatter {
 
     }
 
-    private String covertStringKeyValuesMap2Xml(HashMap<String, String> stringKeyValuesMap) {
+    private String covertStringKeyValuesMap2Xml(LinkedHashMap<String, String> stringKeyValuesMap) {
         StringBuffer xml =new StringBuffer("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<resources>\n");
         for(String key :stringKeyValuesMap.keySet()){
             xml.append("\t<string name=\"").append(key).append("\">").append(stringKeyValuesMap.get(key)).append("</string>\n");

@@ -1,7 +1,7 @@
 package com.shang.layoutformat;
 
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.util.containers.HashMap;
+import com.intellij.util.containers.hash.LinkedHashMap;
 import org.apache.http.util.TextUtils;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
@@ -28,7 +28,7 @@ public class HardDimensReplaceFromatter {
             instance = new HardDimensReplaceFromatter();
         return instance;
     }
-    private static HashMap<String,String> dimensKeyValuesMap = new HashMap<String,String>();
+    private static LinkedHashMap<String,String> dimensKeyValuesMap = new LinkedHashMap<String,String>();
 //    public HashMap<String,String>  getStringKeyValuesMap(){
 //        return dimensKeyValuesMap;
 //    }
@@ -83,8 +83,8 @@ public class HardDimensReplaceFromatter {
             return getKeyByValue(value);
         //当不存在时，新建一个key，放到map中去
         try {
-            if(Integer.parseInt(value) < 0)
-                value = "_"+Math.abs(Integer.parseInt(value));
+            if(Integer.parseInt(getValueExceptDps(value)) < 0)
+                value = "_"+Math.abs(Integer.parseInt(getValueExceptDps(value)));
         } catch (NumberFormatException e) {
             e.printStackTrace();
         }
@@ -96,6 +96,13 @@ public class HardDimensReplaceFromatter {
         dimensKeyValuesMap.put(currentIndex,value);
         return currentIndex;
 
+    }
+
+    private String getValueExceptDps(String value) {
+        //value.endsWith("dp") || value.endsWith("in")|| value.endsWith("mm")|| value.endsWith("pt")|| value.endsWith("px")|| value.endsWith("sp")
+        if(TextUtils.isEmpty(value))
+            return "";
+        return value.replace("dp","").replace("in","").replace("mm","").replace("pt","").replace("px","").replace("sp","");
     }
 
     private String getKeyByValue(String value) {
@@ -123,7 +130,7 @@ public class HardDimensReplaceFromatter {
 
     }
 
-    private String covertStringKeyValuesMap2Xml(HashMap<String, String> stringKeyValuesMap) {
+    private String covertStringKeyValuesMap2Xml(LinkedHashMap<String, String> stringKeyValuesMap) {
         StringBuffer xml =new StringBuffer("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<resources>\n");
         for(String key :stringKeyValuesMap.keySet()){
             xml.append("\t<dimen name=\"").append(key).append("\">").append(stringKeyValuesMap.get(key)).append("</dimen>\n");
