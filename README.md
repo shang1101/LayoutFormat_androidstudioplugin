@@ -1,12 +1,12 @@
 # LayoutFormat_androidstudioplugin
 为android studio 写的一个布局格式化的插件，即插即用。
-#前言
+# 前言
 在使用android studio 的过程中，我们做开发总是习惯的根据UI设计将尺寸值和字符串直接写进.xml文件中，这样做是非常不符合android开发规范的，不管leader跟你说了几次，“不要在layout中硬编码”，但是大家总是这样子做，因为我们做程序开发的就是懒啊，所以就有了这个插件的用武之地了，哈哈。
-#使用
-1 .大家可以去我的github的网址：[LayoutFormat_androidstudioplugin](https://github.com/shang1101/LayoutFormat_androidstudioplugin) 下载`AndroidPlugin_Layoutformat.jar`,然后在adnroid studio 中，操作:
+# 使用
+1. 大家可以去我的github的网址：[LayoutFormat_androidstudioplugin](https://github.com/shang1101/LayoutFormat_androidstudioplugin) 下载`AndroidPlugin_Layoutformat.jar`,然后在adnroid studio 中，操作:
 `双击shift > 搜索Plugins (搜索 include no-project items要勾选)）>点击Plugins > install plugin form disk... >选择下载的jar包 >重启android studio >在 layout 中右键 refactor > LayoutFormat`，ok啦
 想要学习源码的可以将整个仓库fork过去。
- 2 .大家可以在 Plugins 下 选择 Browse repositories...，然后搜索 LayoutFormat 即可，过几天应该就通过审核，就会在intellj plugin 仓库中搜到了。
+ 2. 大家可以在 Plugins 下 选择 Browse repositories...，然后搜索 LayoutFormat 即可，过几天应该就通过审核，就会在intellj plugin 仓库中搜到了。
 # 展示
 1 . 批量去格式化layout.xml
 
@@ -14,7 +14,6 @@
 ![批量修改layout](https://github.com/shang1101/LayoutFormat_androidstudioplugin/blob/master/layoutformat批量格式化展示.gif)
 
 2 .修改某一个layout.xml
-
 
 ![单独修改一个布局](https://github.com/shang1101/LayoutFormat_androidstudioplugin/blob/master/layoutformat演示.gif)
 #使用中可能会遇到的问题
